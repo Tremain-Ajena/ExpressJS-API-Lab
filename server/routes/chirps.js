@@ -21,10 +21,12 @@ router.post('/', (request,response) => {
 });
 
 router.put('/:id?', function (request,response) {
-    // this updates the chirps
+    //NOTE: this updates the chirps
+    //NOTE: the question mark (?) is not actually needed
 
     // chirpsStore.DeleteChirp(request.body);
-    // I didn't need to invoke the DeleteChirp function because the UpdateChirp function knows to clear out the previous info
+    //NOTE: I didn't need to invoke the DeleteChirp function because the UpdateChirp function knows to clear out the previous info
+    
     chirpsStore.UpdateChirp(request.params.id, {
         "user":request.body.user,
         "text":request.body.text
@@ -34,9 +36,9 @@ router.put('/:id?', function (request,response) {
 });
 
 router.delete('/:id', function (request,response) {
-    // this deletes chirps
+    //NOTE: this deletes chirps
 
-    // the '?' after '/:id' does not have to be after the id
+    //NOTE: the '?' after '/:id' does not have to be after the id
     chirpsStore.DeleteChirp(request.params.id);
     response.sendStatus(200);
 })

@@ -8,6 +8,7 @@ const chirpsRouter= require('./chirps');
 let router= express.Router();
 
 router.use('/chirps',chirpsRouter);
+// NOTE: "router.use()" is middleware
 // router.use('/users',usersRouter);
 // router.use('/')
 
